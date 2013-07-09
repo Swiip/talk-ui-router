@@ -1,11 +1,24 @@
 angular.module('AngularPortfolio', ['AppSearch', 'AppAnimations', 'ui.state'])
 
+  .value('$anchorScroll', angular.noop)
+
+  .run(['$rootScope', '$state', '$stateParams', function($rootScope, $state, $stateParams) {
+    console.log($state);
+    $rootScope.$state = $state;
+    $rootScope.$stateParams = $stateParams;
+  }])
+
   .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('index', {
         url: '/q/{search}',
         controller: 'ListCtrl',
         templateUrl: './views/list.html'
+      })
+      .state('index.focus', {
+        url: '/focus/{formerId}',
+        controller: 'FocusCtrl',
+        templateUrl: './views/focus.html'
       })
 
     $urlRouterProvider.otherwise('/q/all');
@@ -75,6 +88,13 @@ angular.module('AngularPortfolio', ['AppSearch', 'AppAnimations', 'ui.state'])
     };
   }])
 
+  .controller('FocusCtrl', ['$scope', '$rootScope', '$stateParams', function($scope, $rootScope, $stateParams) {
+    $scope.fetchResults($scope.limit).forEach(function(result) {
+      if(result.id == $stateParams.formerId) {
+        $scope.result = result;
+      }
+    })
+  }])
 
   .directive('appScroll', function () {
     return function ($scope, element) {
@@ -84,7 +104,7 @@ angular.module('AngularPortfolio', ['AppSearch', 'AppAnimations', 'ui.state'])
     };
   })
 
-  .directive('appFocus', ['appSearch', '$rootScope', '$compile', '$animator', function (appSearch, $rootScope, $compile, $animator) {
+  /*.directive('appFocus', ['appSearch', '$rootScope', '$compile', '$animator', function (appSearch, $rootScope, $compile, $animator) {
     var former, formerContainer, formerID, formerIndex = -1;
     $rootScope.$on('results', function () {
       if (former) {
@@ -162,4 +182,4 @@ angular.module('AngularPortfolio', ['AppSearch', 'AppAnimations', 'ui.state'])
         return index;
       };
     }
-  }]);
+  }]);*/

@@ -88,6 +88,10 @@ body {
   color:white;
 }
 
+.focus:empty {
+  height:0px;
+}
+
 .focus .line {
   margin-bottom:10px;
 }

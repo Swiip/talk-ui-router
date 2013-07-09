@@ -86,7 +86,7 @@ angular.module('AppAnimations', [])
           height:0,
           onComplete:function() {
             done();
-            element.remove();
+            //element.remove();
           }
         });
       }

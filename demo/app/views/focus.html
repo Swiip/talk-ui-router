@@ -1,0 +1,19 @@
+<div class="focus-slide ng-scope">
+  <div class="focus-inner">
+    <div class="inner">
+      <h4 class="ani line">{{ result.name }}</h4>
+
+      <p class="ani line">{{ result.desc }}</p>
+
+      <div class="ani line">
+        <div class="medium default btn"><a href="{{ result.url }}" target="_blank"><i class="icon-globe"></i>View
+          Website</a></div>
+        <div ng-hide="!result.src" class="medium default btn"><a href="{{ result.src }}" target="_blank"><i
+            class="icon-github"></i>View Github Repo</a></div>
+      </div>
+      <a href="{{ result.url }}" class="ani" target="_blank" rel="nofollow">
+        <img src="http://builtwith.angularjs.org/projects/{{ result.thumb }}"/>
+      </a>
+    </div>
+  </div>
+</div>
