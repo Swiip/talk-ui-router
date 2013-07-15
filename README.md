@@ -28,3 +28,10 @@ Modifications which as been made :
 * Replace appFocus directive by nested route /focus/{id} wiring same animations with ui-view and ng-show
 
 Feature lost (at that point) : opening of the focus on the same line as the thumbnail.
+
+Slides
+------
+
+Slides are made with [RevealJS](https://github.com/hakimel/reveal.js)
+
+I wrote the slides in english even if the talk will be in french
