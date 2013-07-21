@@ -307,12 +307,51 @@ function MainCtrl($state){
             </code></pre>
           </section>
           <section>
+            <h3>http://mydomain.com/</h3>
+            <img src="img/nested-4.png"/>
+          </section>
+          <section>
+            <h3>http://mydomain.com/link1</h3>
+            <img src="img/nested-3.png"/>
+          </section>
+          <section>
+            <h3>http://mydomain.com/link1/products</h3>
+            <img src="img/nested-2.png"/>
+          </section>
+          <section>
+            <h4>http://mydomain.com/link1/products/movies</h4>
+            <img src="img/nested-1.png"/>
+          </section>
+          <section>
+            <h4>http://mydomain.com/link1/products/movies/3/edit</h4>
+            <img src="img/nestedview.png"/>
+          </section>
+          <section>
             <h2>Nested Tricks</h2>
             <ul>
-              <li>Abstract</li>
-              <li>Scope inheritance</li>
-              <li>Controller order</li>
+              <li>
+                Abstract States
+                <ul>
+                  <li>Non usable states</li>
+                  <li>Controller(s)</li>
+                  <li>Template(s)</li>
+                  <li>URL</li>
+                  <li>Can be parent</li>
+                </ul>
+              </li>
             </ul>
+            <ul>
+              <li>
+                Controller Stack
+                <ul>
+                  <li>Nested states use several controllers</li>
+                  <li>Controller are executed in order</li>
+                  <li>Only switching states<br>controllers are called</li>
+                  <li>Scope is child of the parent controller</li>
+                </ul>
+              </li>
+            </ul>
+            <h3 style="margin-top: 30px">Reuse parent controller and scope for optimization</h3>
           </section>
         </section>
 
@@ -360,19 +399,56 @@ $stateProvider
           </section>
 				</section>
 
+        <section>
+          <h2>About 0.0.2</h2>
+          <h3>Animations <small>AngularJS 1.1.5+</small></h3>
+          <pre><code data-trim class="html">
+&lt;body>
+  &lt;div ui-view="filters" ng-animate="'fade'">&lt;/div>
+&lt;/body>
+          </code></pre>
+          <h3>Directive ui-sref</h3>
+          <pre><code data-trim class="html">
+&lt;ul>
+  &lt;li ng-repeat="contact in contacts">
+    &lt;a ui-sref="contacts.view({ id: contact.id })">
+      {{ contact.name }}
+    &lt;/a>
+  &lt;/li>
+&lt;/ul>
+          </code></pre>
+        </section>
 
 				<section>
-					<h2>Stellar Links</h2>
-					<ul>
-						<li><a href="http://slid.es">Try the online editor</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js">Source code on GitHub</a></li>
-						<li><a href="http://twitter.com/hakimel">Follow me on Twitter</a></li>
-					</ul>
+          <section>
+            <h2>Demos</h2>
+          </section>
+					<section>
+            <h2>year of moo</h2>
+            <h4>
+              <a href="http://www.yearofmoo.com/2013/05/enhanced-animations-in-angularjs.html" target="_blank">
+                http://www.yearofmoo.com/2013/05/enhanced-animations-in-angularjs.html
+              </a>
+            </h4>
+            <a href="http://localhost:9001/#/q/all">
+              <img src="img/yearofmoo.png" />
+            </a>
+					</section>
+          <section>
+            <h2>GOBO</h2>
+            <h3>
+              <a href="http://localhost:9000/#/contrats" target="_blank">
+                Good Old Back Office
+              </a>
+            </h3>
+          </section>
 				</section>
 
 				<section>
 					<h1>THE END</h1>
-					<h3>BY Hakim El Hattab / hakim.se</h3>
+          <h1>THANKS !</h1>
+          <h1>QUESTIONS ?</h1>
+					<h3>BY Matthieu Lux / <a href="https://twitter.com/Swiip">@Swiip</a></h3>
 				</section>
 
 			</div>
